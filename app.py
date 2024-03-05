@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import pickle
 import pandas as pd
 import warnings
@@ -18,10 +18,7 @@ def predict_page():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Get the form data
     form_data = request.form
-
-    # Create a dictionary with default values for all features
     features = {
         'INT_SQFT': [int(form_data.get('sqft', 0))],
         'N_BEDROOM': [int(form_data.get('bedrooms', 0))],
@@ -45,17 +42,10 @@ def predict():
         'STREET_Paved': [1 if form_data.get('street-type') == 'paved' else 0]
     }
 
-    # Convert the dictionary to a DataFrame
     sample_df = pd.DataFrame.from_dict(features)
-
-    # Scale the sample data
     scaled_sample = scaler.transform(sample_df)
-
-    # Make the prediction
     prediction = model.predict(scaled_sample)
-
-    # Return the prediction result
-    return render_template('index.html', prediction_text='Predicted Price: {}'.format(prediction[0]))
+    return jsonify({'prediction': prediction[0]})
 
 if __name__ == "__main__":
     app.run(debug=True)
