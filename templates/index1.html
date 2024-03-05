@@ -17,8 +17,7 @@
       <div class="intro-box">
         <h2>FIND YOUR PERFECT PROPERTY IN CHENNAI</h2>
         <p>Explore a wide range of properties in Chennai tailored to your preferences.</p>
-        <a href="index.html" class="btn">Get Started</a>
-
+        <a href="{{ url_for('predict_page') }}" class="btn">Get Started</a>
       </div>
     </section>
   </main>
@@ -48,14 +47,14 @@
         </div>
       </div>
       <div class="card">
-        <img src="{{ url_for('static', filename='imgs/JL0.jpeg') }}" alt="Image 2">
+        <img src="{{ url_for('static', filename='imgs/FL0.jpg') }}" alt="Image 2">
         <div class="card-content">
           <h3>Find Your Ideal Home</h3>
           <p>Search through a wide range of properties to find your dream home.</p>
         </div>
       </div>
       <div class="card">
-        <img src="{{ url_for('static', filename='imgs/JL1.jpeg') }}" alt="Image 3">
+        <img src="{{ url_for('static', filename='imgs/FL1.jpeg') }}" alt="Image 3">
         <div class="card-content">
           <h3>Expert Guidance</h3>
           <p>Get expert advice and guidance on the property buying process.</p>
@@ -63,7 +62,6 @@
       </div>
       <div class="card">
         <img src="{{ url_for('static', filename='imgs/JL2.jpeg') }}" alt="Image 4">
-        <img src="./img/JL2.jpeg" alt="Image 4">
         <div class="card-content">
           <h3>Exclusive Listings</h3>
           <p>Access exclusive property listings tailored to your preferences.</p>
@@ -78,7 +76,6 @@
       </div>
       <div class="card">
         <img src="{{ url_for('static', filename='imgs/JL4.jpeg') }}" alt="Image 6">
-        <img src="./img/JL4.jpeg" alt="Image 6">
         <div class="card-content">
           <h3>Flexible Financing</h3>
           <p>Explore flexible financing options to help you purchase your dream property.</p>

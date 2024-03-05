@@ -35,34 +35,68 @@
 //     }
 //   });
 
-function searchProperties(sqft, bedrooms, bathrooms, location, area, parking, buildingType, utility, streetType) {
-  // Create an object with the form values
-  const data = {
-      'sqft': sqft,
-      'bedrooms': bedrooms,
-      'bathrooms': bathrooms,
-      'location': location,
-      'area': area,
-      'parking': parking ? 'Yes' : 'No',
-      'building-type': buildingType,
-      'utility': utility,
-      'street-type': streetType
-  };
+// function searchProperties(sqft, bedrooms, bathrooms, location, area, parking, buildingType, utility, streetType) {
+//   // Create an object with the form values
+//   const data = {
+//       'sqft': sqft,
+//       'bedrooms': bedrooms,
+//       'bathrooms': bathrooms,
+//       'location': location,
+//       'area': area,
+//       'parking': parking ? 'Yes' : 'No',
+//       'building-type': buildingType,
+//       'utility': utility,
+//       'street-type': streetType
+//   };
 
-  // Send a POST request to the Flask server
-  fetch('/predict', {
+//   // Send a POST request to the Flask server
+//   fetch('/predict', {
+//       method: 'POST',
+//       headers: {
+//           'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(data)  // Convert the data into a JSON string
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//       // Display the prediction result
+//       console.log('Predicted Price:', data.prediction);
+//   })
+//   .catch((error) => {
+//       console.error('Error:', error);
+//   });
+// }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("property-search");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Create an object with the form values
+    const data = {
+      'sqft': document.getElementById("sqft").value,
+      'bedrooms': document.getElementById("bedrooms").value,
+      'bathrooms': document.getElementById("bathrooms").value,
+      'location': document.getElementById("location").value,
+      'parking': document.getElementById("parking").checked ? 'Yes' : 'No',
+      'building-type': document.getElementById("building-type").value,
+      'utility': document.getElementById("utility").checked ? 'Yes' : 'No',
+      'street-type': document.getElementById("street-type").value
+    };
+
+    // Send a POST request to the Flask server
+    fetch("/predict", {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)  // Convert the data into a JSON string
-  })
-  .then(response => response.json())
-  .then(data => {
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
       // Display the prediction result
-      console.log('Predicted Price:', data.prediction);
-  })
-  .catch((error) => {
-      console.error('Error:', error);
+      document.getElementById('predictionAmount').textContent = 'Predicted Price: ' + data.prediction;
+    });
   });
-}
+});
