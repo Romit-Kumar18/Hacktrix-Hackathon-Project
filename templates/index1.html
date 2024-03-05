@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chennai Property Finder</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Welcome to <span>Smart Roof</span></h1>
+    <img src="{{ url_for('static', filename='imgs/JL5.jpg') }}" alt="Logo" class="logo">
+  </header>
+  <main>
+    <section class="intro-section">
+      <div class="intro-box">
+        <h2>FIND YOUR PERFECT PROPERTY IN CHENNAI</h2>
+        <p>Explore a wide range of properties in Chennai tailored to your preferences.</p>
+        <a href="index.html" class="btn">Get Started</a>
+
+      </div>
+    </section>
+  </main>
+
+<header>
+  <div class="header-content">
+</header>
+<main>
+  <section class="image-section">
+    <img src="{{ url_for('static', filename='imgs/skyline.avif') }}" alt="Chennai Skyline" class="skyline-image">
+  </section>
+  <section class="about-section">
+    <div class="about-us">
+      <h2>About Us</h2>
+      <p>Smart roof is committed to providing you with the most comprehensive and reliable property listings in Chennai. Our platform offers a user-friendly experience, allowing you to explore properties based on your specific criteria.</p>
+      <p>Whether you're looking for a cozy apartment in Anna Nagar or a spacious villa in Adyar, we've got you covered. Trust Chennai Property Finder to help you find your ideal home.</p>
+    </div>
+  </section>
+  <section class="features-section">
+    <h2>Discover More About Smart Roof</h2>
+    <div class="card-carousel">
+      <div class="card">
+        <img src="{{ url_for('static', filename='imgs/save.jpeg') }}" alt="Image 1">
+        <div class="card-content">
+          <h3>Explore Neighborhoods</h3>
+          <p>Discover information about the vibrant neighborhoods of Chennai.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='imgs/JL0.jpeg') }}" alt="Image 2">
+        <div class="card-content">
+          <h3>Find Your Ideal Home</h3>
+          <p>Search through a wide range of properties to find your dream home.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='imgs/JL1.jpeg') }}" alt="Image 3">
+        <div class="card-content">
+          <h3>Expert Guidance</h3>
+          <p>Get expert advice and guidance on the property buying process.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='imgs/JL2.jpeg') }}" alt="Image 4">
+        <img src="./img/JL2.jpeg" alt="Image 4">
+        <div class="card-content">
+          <h3>Exclusive Listings</h3>
+          <p>Access exclusive property listings tailored to your preferences.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='imgs/JL3.png') }}" alt="Image 5">
+        <div class="card-content">
+          <h3>Community Insights</h3>
+          <p>Learn about the community and amenities surrounding each property.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='imgs/JL4.jpeg') }}" alt="Image 6">
+        <img src="./img/JL4.jpeg" alt="Image 6">
+        <div class="card-content">
+          <h3>Flexible Financing</h3>
+          <p>Explore flexible financing options to help you purchase your dream property.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-buttons">
+      <button class="prev-button">&#10094;</button>
+      <button class="next-button">&#10095;</button>
+    </div>
+    </div>
+</main>
+<footer>
+  <p>&copy; 2024 Smart Roof. All rights reserved.</p>
+</footer>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

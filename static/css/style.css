@@ -1,102 +1,157 @@
+/* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+header {
+  background-color: #2c3e50; /* Dark blue background */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 5px solid #2980b9; /* Highlight color */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  text-transform: uppercase; /* Uppercase title text */
+  letter-spacing: 2px; /* Add letter spacing for emphasis */
+  margin-bottom: 10px; /* Add space below title */
+}
+
+header p {
+  margin: 0;
+  font-size: 16px;
+  color: #ecf0f1; /* Lighter text color */
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #34495e; /* Dark blue footer */
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Search form styles */
+.search-section {
+  background-color: #ecf0f1; /* Light gray background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.search-section h2 {
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Dark blue heading color */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2c3e50; /* Dark blue label color */
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin-top: 5px;
+}
+
+.search-button {
+  background-color: #27ae60; /* Green search button */
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;} /* Increase font size */
+/* CSS styles for prediction text */
+/* CSS styles for prediction text */
+.prediction-container {
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #ddd; /* Border style */
+  padding: 15px; /* Padding inside the container */
+  margin-top: 20px; /* Add some space between sections */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.prediction-container:hover {
+  background-color: #e0e0e0; /* Change background color on hover */
+}
+
+.prediction-container h4 {
+  color: #333; /* Text color for the prediction heading */
+  font-size: 18px; /* Font size for the heading */
+  margin-bottom: 10px; /* Add space below the heading */
+}
+
+.prediction-amount {
+  background-color: #fff; /* White background color for the prediction amount */
+  border: 1px solid #ccc; /* Border style */
+  padding: 10px 15px; /* Padding inside the prediction amount box */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  animation: fadeIn 0.5s ease forwards; /* Fade in animation for prediction value */
+  opacity: 0; /* Initially hide the prediction value */
+  text-align: center; /* Center align the text */
+}
+
+.prediction-text {
+  color: #007bff; /* Prediction text color */
+  font-size: 20px; /* Font size for the prediction text */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Smooth hover effect */
+.prediction-container:hover {
+  transform: scale(1.05); /* Scale up the container on hover */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with 0 opacity */
   }
-  
-  header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 5px solid #2980b9;
+  to {
+    opacity: 1; /* Fade in to full opacity */
   }
-  
-  header h1 {
-    margin: 0;
-    font-size: 36px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-  }
-  
-  header p {
-    margin: 0;
-    font-size: 16px;
-    color: #ecf0f1;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  footer {
-    background-color: #34495e;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  .search-section {
-    background-color: #ecf0f1;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .search-section h2 {
-    margin-top: 0;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #2c3e50;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #2c3e50;
-  }
-  
-  input[type="text"],
-  select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  input[type="checkbox"] {
-    margin-top: 5px;
-  }
-  
-  .search-button {
-    background-color: #27ae60;
-    color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: block;
-    margin: 0 auto;
-    font-size: 16px;
-  }
-  
-  .search-button:hover {
-    background-color: #219d54;
-  }
-  header h1:hover {
-    color: #e74c3c;
-  }
-  .results-section {
-    background-color: #ecf0f1;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+}
+/* Smooth hover effect */
+.prediction-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
+}
+.search-button:hover {
+  background-color: #219d54; /* Darker green on hover */
+}
+header h1:hover {
+  color: #e74c3c; /* Change color to a shade of red when hovered over */
+}
+/* Results section styles */
+.results-section {
+  background-color: #ecf0f1; /* Light gray background for results */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
